@@ -2,10 +2,7 @@ import React, { useState, useRef } from "react";
 
 const getFileIcon = (fileName) => {
   const ext = fileName.split(".").pop().toLowerCase();
-  if (["jpg", "jpeg", "png", "gif"].includes(ext)) return "🖼️";
-  if (["pdf"].includes(ext)) return "📄";
-  if (["zip", "rar"].includes(ext)) return "🗜️";
-  if (["doc", "docx"].includes(ext)) return "📃";
+  if (["jpg", "jpeg", "png", "gif", "jfif"].includes(ext)) return "🖼️";
   return "📁";
 };
 
@@ -85,7 +82,7 @@ export default function CreateStickerSheet() {
       <div className="flex flex-col space-y-2">
         <label
           htmlFor="fileInput"
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-700 transition"
+          className="bg-pink-400 text-center text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-pink-500 transition"
         >
           Choose Files
         </label>
@@ -94,6 +91,7 @@ export default function CreateStickerSheet() {
           type="file"
           multiple
           className="hidden"
+          accept="image/*"
           onChange={handleFileSelect}
         />
       </div>
@@ -104,7 +102,7 @@ export default function CreateStickerSheet() {
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         className={`flex flex-col items-center justify-center border-2 border-dashed rounded-xl p-8 cursor-pointer transition
-          ${dragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 bg-white"}`}
+          ${dragActive ? "border-pink-500 bg-pink-50" : "border-gray-300 bg-white"}`}
         onClick={() => document.getElementById("fileInputDrop").click()}
       >
         <input
@@ -112,6 +110,7 @@ export default function CreateStickerSheet() {
           type="file"
           multiple
           className="hidden"
+          accept="image/*"
           onChange={handleFileSelect}
         />
         <p className="text-gray-500 text-center">
@@ -155,7 +154,7 @@ export default function CreateStickerSheet() {
                     className={`h-2 rounded-full transition-all duration-300 ${
                       uploadProgress[file.name] === 100
                         ? "bg-green-500"
-                        : "bg-blue-600"
+                        : "bg-purple-600"
                     }`}
                     style={{ width: `${uploadProgress[file.name] || 0}%` }}
                   ></div>
@@ -176,7 +175,7 @@ export default function CreateStickerSheet() {
       {/* Upload button */}
       {files.length > 0 && (
         <button
-          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+          className="w-full bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-500 transition"
           onClick={simulateUpload}
         >
           Upload Files

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -7,7 +7,10 @@ export const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-serif text-purple-600 hover:text-purple-800 transition duration-300">
+            <Link
+              to="/"
+              className="text-2xl font-serif text-purple-600 hover:text-purple-800 transition duration-300"
+            >
               StickerBloom
             </Link>
           </div>
@@ -15,19 +18,20 @@ export const Navbar = () => {
           <div className="flex space-x-8">
             <Link
               to="/create"
-              className="text-purple-700 hover:text-pink-500 font-medium text-sm uppercase tracking-wide transition duration-300"
+              className="relative text-purple-700 hover:text-pink-500 font-medium text-sm uppercase tracking-wide transition duration-300 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-pink-500 after:transition-all after:duration-300 after:-translate-x-1/2 hover:after:w-full"
             >
               Create
             </Link>
             <Link
               to="/gallery"
-              className="text-purple-700 hover:text-pink-500 font-medium text-sm uppercase tracking-wide transition duration-300"
+              className="relative text-purple-700 hover:text-pink-500 font-medium text-sm uppercase tracking-wide transition duration-300 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-pink-500 after:transition-all after:duration-300 after:-translate-x-1/2 hover:after:w-full"
             >
               Gallery
             </Link>
+
             <Link
               to="/about"
-              className="text-purple-700 hover:text-pink-500 font-medium text-sm uppercase tracking-wide transition duration-300"
+              className="relative text-purple-700 hover:text-pink-500 font-medium text-sm uppercase tracking-wide transition duration-300 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-pink-500 after:transition-all after:duration-300 after:-translate-x-1/2 hover:after:w-full"
             >
               About
             </Link>
